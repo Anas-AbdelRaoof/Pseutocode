@@ -33,7 +33,6 @@ languages_extensions = {
     "julia": ".jl",
     "f#": ".fs",
     "fsharp": ".fs",
-    # Cython extension should include the leading dot like the others
     "cython": ".pyx",
 }  # Notice: the languages names were lower() before this dictionary
 
@@ -68,50 +67,19 @@ def check_lang(language_name, language_file):
       so we can compare directly to the result of os.path.splitext.
     """
 
-    # Normalize the language name so lookups are case-insensitive and match
-    # the dictionary keys which are all lower-case.
-    language_key = language_name.lower()
-
     try:
-        # Expected extension for the provided language name. If the language is
-        # not present in the mapping a KeyError will be raised and handled
-        # below.
-        expected_extension = languages_extensions[language_key]
+        file_and_extension = language_file.split(".")
 
-        # Use os.path.splitext to safely extract the extension from the
-        # filename (includes the leading dot or empty string if none).
-        _, file_extension = os.path.splitext(language_file)
+        extension = languages_extensions[language_name]  # Language name's extension
 
-        # If the file extension doesn't match what we expect for the language,
-        # print a helpful, colorized message and return False.
-        if file_extension != expected_extension:
-            # Construct a suggested filename by replacing the current
-            # extension (if any) with the expected one. If the filename had no
-            # extension we simply append the expected extension.
-            if file_extension:
-                suggested_name = language_file[:-len(file_extension)] + expected_extension
-            else:
-                suggested_name = language_file + expected_extension
-
-            # Rich-formatted output to inform the user of the mismatch and show
-            # a suggested filename that would be correct for the given
-            # programming language.
+        if not language_file.endswith(extension):  # Ex: name: Rust file: .lua
             print(
-                f"""
-[red]File <[italic blue]{language_file}[/italic blue]> is not [italic blue]{language_name.title()}[/italic blue] file[/red]
-[green]Did you mean <[yellow]{suggested_name}[/yellow]>?[/green]
-                """
-            )
+                f"""[red]File <[italic blue]{language_file}[/italic blue]> is not [italic blue]{language_name.title()}[/italic blue] file[/red]\n[green]Do you mean <[yellow]{language_file.replace(file_and_extension[1], languages_extensions[language_name].replace(".", ""))}[/yellow]>?[/green]""")
             return False
 
     except KeyError:
-        # The requested language is not present in the mapping of supported
-        # languages. Inform the user and return False.
         print(
-            f"[red]Language [italic blue]{language_name.title()}[/italic blue] is not allowed or not a recognized language[/red]"
-        )
+            f"[red]Language [italic blue]{language_name.title()}[/italic blue] is not allowed or not real language[/red]")
         return False
 
-    # If we reach here, the language exists in the mapping and the file's
-    # extension matched the expected one.
     return True
