@@ -1,12 +1,12 @@
 
 
 
-<img width="500" height="500" alt="CLISIPY" src="https://github.com/user-attachments/assets/d3d621d7-0a8b-42af-8872-c9411d4ccdb4" />
+<img width="800" height="800" alt="CLISIPY" src="https://github.com/user-attachments/assets/d3d621d7-0a8b-42af-8872-c9411d4ccdb4" />
 
 
 
 # CLISIPY 
-# (Command-Line Interface Smart Interpreter by Python)
+##* __(Command-Line Interface Smart Interpreter by Python)__*
 
 Convert pseudocode into actual code across 25+ *__(and more in future!)__* programming languages using AI.
 
