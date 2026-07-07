@@ -1,7 +1,8 @@
 
 
 
-<img width="500" height="500" alt="Pseutocode-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/a418522b-a1b2-4e06-9fb6-8481ba3e91eb" />
+<img width="800" height="800" alt="CLISIPY" src="https://github.com/user-attachments/assets/d3d621d7-0a8b-42af-8872-c9411d4ccdb4" />
+
 
 
 # CLISIPY
