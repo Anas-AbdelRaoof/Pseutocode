@@ -1,4 +1,5 @@
 from groq import Groq
+from groq import APIConnectionError, APIStatusError, APITimeoutError, RateLimitError
 import os
 from dotenv import load_dotenv
 from system_prompt import system_prompt
@@ -19,9 +20,18 @@ def convert_pseudocode_to_code_with_ai():
     load_dotenv()
 
     # Initialize the Groq API client with the API key from environment variables
-    client = Groq(
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    try:
+        client = Groq(
+            api_key=os.environ.get("GROQ_API_KEY")
+        )
+    except APIConnectionError as e:
+        raise APIConnectionError(f"Failed to connect to Groq API: {e}")
+    except APIStatusError as e:
+        raise APIStatusError(f"Groq API returned an error status: {e}")
+    except APITimeoutError as e:
+        raise APITimeoutError(f"Groq API request timed out: {e}")
+    except RateLimitError as e:
+        raise RateLimitError(f"Groq API rate limit exceeded: {e}")
 
     # Retrieve the system prompt that defines how the AI should behave
     # This prompt guides the AI on how to convert pseudocode to actual code
@@ -31,15 +41,24 @@ def convert_pseudocode_to_code_with_ai():
     # The model will process the pseudocode and generate corresponding code
     current_system_prompt = system_prompt()
 
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": current_system_prompt,
-            } # The system prompt contains the pseudocode to be converted
-        ],
-        model="llama-3.3-70b-versatile",
-    )
+    try:
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": current_system_prompt,
+                } # The system prompt contains the pseudocode to be converted
+            ],
+            model="llama-3.3-70b-versatile",
+        )
+    except APIConnectionError as e:
+        raise APIConnectionError(f"Failed to connect to Groq API: {e}")
+    except APIStatusError as e:
+        raise APIStatusError(f"Groq API returned an error status: {e}")
+    except APITimeoutError as e:
+        raise APITimeoutError(f"Groq API request timed out: {e}")
+    except RateLimitError as e:
+        raise RateLimitError(f"Groq API rate limit exceeded: {e}")
 
     # Extract and return the generated code from the API response
     return chat_completion.choices[0].message.content
