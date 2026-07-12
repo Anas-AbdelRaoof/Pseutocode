@@ -52,7 +52,7 @@ def convert_pseudocode_to_code_with_ai():
                 {
                     "role": "user",
                     "content": current_system_prompt,
-                } # The system prompt contains the pseudocode to be converted
+                } # The system prompt alows AI to convert pseudocode nto programming languages
             ],
             model="llama-3.3-70b-versatile",
         )
