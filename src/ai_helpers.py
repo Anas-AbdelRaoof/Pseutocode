@@ -23,15 +23,17 @@ def convert_pseudocode_to_code_with_ai():
     # Load environment variables from .env file to access API credentials securely
     load_dotenv()
 
+    # Get the system prompt
+    current_system_prompt = system_prompt()
+
     # Initialize the Groq API client with the API key from environment variables
     try:
         client = Groq(
             api_key=os.environ.get("GROQ_API_KEY")
         )
 
-    # Send a chat completion request to the Groq API with the system prompt
-    # The model will process the pseudocode and generate corresponding code
-    current_system_prompt = system_prompt()
+        # Send a chat completion request to the Groq API with the system prompt
+        # The model will process the pseudocode and generate corresponding code
 
         chat_completion = client.chat.completions.create(
             messages=[
