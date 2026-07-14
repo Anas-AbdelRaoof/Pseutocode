@@ -1,0 +1,92 @@
+{
+  "python": {
+    "name": "python",
+    "extension": ".py",
+    "tips": "Use descriptive variables names, follow PEP 8 clean code rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "c++": {
+    "name": "c++",
+    "extension": ".cpp",
+    "tips": "Use descriptive variables names, follow clean code rules and memory management rules, Use OOP and functions with descriptive names to make the code organized."
+  },
+  "c": {
+    "name": "c",
+    "extension": ".c",
+    "tips": "Use descriptive variables names, follow clean code rules and memory management rules, Use structs and functions with descriptive names to make the code organized."
+  },
+  "java": {
+    "name": "java",
+    "extension": "java",
+    "tips": "Use descriptive variables names, follow clean code rules, Use OOP and functions with descriptive names to make the code organized."
+  },
+  "c#": {
+    "name": "c#",
+    "extension": ".cs",
+    "tips": "Use descriptive variables names, follow clean code rules and desktop standard developing rules, Use OOP and functions with descriptive names to make the code organized."
+  },
+  "php": {
+    "name": "php",
+    "extension": ".php",
+    "tips": "Use descriptive variables names, clean code rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "rust": {
+    "name": "rust",
+    "extension": ".rs",
+    "tips": "Use descriptive variables names, follow clean code rules and memory management rules, Use OOP, ownership and borrowing rules, and functions with descriptive names to make the code organized."
+  },
+  "go": {
+    "name": "go",
+    "extension": ".go",
+    "tips": "Use descriptive variables names, follow clean code rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "lua": {
+    "name": "lua",
+    "extension": ".lua",
+    "tips": "Use descriptive variables names, follow clean code rules, Use functions with descriptive names to make the code organized, and use tables and metatables to make OOP."
+  },
+  "swift": {
+    "name": "swift",
+    "extension": ".swift",
+    "tips": "Use descriptive variables names, follow clean code rules and iOS/macOS standard developing rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "kotlin": {
+    "name": "swift",
+    "extension": ".kt",
+    "tips": "Use descriptive variables names, follow clean code rules and Android standard developing rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "dart": {
+    "name": "dart",
+    "extension": ".dart",
+    "tips": "Use descriptive variables names, follow clean code rules and Flutter standard developing rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "gdscript": {
+    "name": "gdscript",
+    "extension": ".gd",
+    "tips": "Use descriptive variables names, follow clean code rules and Godot game engine standard developing rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "javascript": {
+    "name": "javascript",
+    "extension": ".js",
+    "tips": "Use descriptive variables names, follow clean code rules and Node.js standard developing rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "zig": {
+    "name": "zig",
+    "extension": ".zig",
+    "tips": "Use descriptive variables names, follow clean code rules and memory management rules, Use functions with descriptive names to make the code organized."
+  },
+  "julia": {
+    "name": "julia",
+    "extension": ".jl",
+    "tips": "Use descriptive variables names, follow clean code rules, Use classes and functions with descriptive names to make the code organized."
+  },
+  "f#": {
+    "name": "f#",
+    "extension": ".fs",
+    "tips": "Use descriptive variables names, follow clean code rules and functional programming rules, Use OOP and functions with descriptive names to make the code organized."
+  },
+  "cython": {
+    "name": "cython",
+    "extension": ".pyx",
+    "tips": "Use descriptive variables names, follow PEP 8 clean code rules from Python and type declaration from C, Use classes and functions with descriptive names to make the code organized."
+  }
+}
