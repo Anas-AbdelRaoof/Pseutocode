@@ -1,6 +1,7 @@
 from sys import argv, exit
 import os
 from rich import print
+import json
 
 
 def read_file():
@@ -62,3 +63,14 @@ def programming_language_file():
     """
 
     return argv[3].lower()
+
+
+def programming_language_tips():
+    """Returns the tips of chosen programming language"""
+
+    name = programming_language_name()
+    with open("languages.json", "r") as file:
+        languages = json.load(file)
+    lang = languages[name]
+    tip = lang["tips"]
+    return tip
